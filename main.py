@@ -47,11 +47,6 @@ def main():
         knowledge = process_text(text)
         
         query = st.chat_input("Ask a question within the context of the PDF")
-
-        cancel_button = st.button("Cancel")
-        
-        if cancel_button:
-            st.stop()
         
         if query:
             with st.chat_message("user"):
