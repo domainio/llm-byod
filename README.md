@@ -13,22 +13,27 @@ PDF sample data
   
 
 ## Setup Guide
-1. Create a Python virtual env
-```
-python -m venv .venv
-source .venv/bin/activate
-```
-2. Install the required dependencies
-```
-pip install -r requirements.txt
-```
+1. Clone repo
+   ```
+    git clone https://github.com/domainio/llm-byod.git
+    cd llm-byod
+   ```
+2. Create a Python virtual env
+    ```
+    python -m venv .venv
+    source .venv/bin/activate
+    ```
+3. Install the required dependencies
+    ```
+    pip install -r requirements.txt
+    ```
   
 4. Create an OpenAI API key and put it in the `.env` file as `OPENAI_API_KEY=<your API key>`
 
 5. Run the app
-```
-streamlit run main.py
-```
+    ```
+    streamlit run main.py
+    ```
 
 
 
