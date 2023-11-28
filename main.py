@@ -43,18 +43,19 @@ def main():
     
     if pdf is not None:
         pdf_reader = PdfReader(pdf)
-        
         text = get_all_text(pdf_reader)
-        
         knowledge = process_text(text)
         
-        query = st.text_input("Ask a question within the context of the PDF")
+        query = st.chat_input("Ask a question within the context of the PDF")
+
         cancel_button = st.button("Cancel")
         
         if cancel_button:
             st.stop()
         
         if query:
+            with st.chat_message("user"):
+                st.write(query)
             docs = knowledge.similarity_search(query)
             llm = OpenAI()
             chain = load_qa_chain(llm, chain_type="stuff")
@@ -62,9 +63,9 @@ def main():
             with get_openai_callback() as cost:
                 response = chain.run(input_documents=docs, question=query)
                 print(cost)
-                
-            st.write(response)
             
-            
+            message = st.chat_message("assistant")
+            message.write(response)
+                        
 if __name__ == "__main__":
     main()
