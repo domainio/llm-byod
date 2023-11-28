@@ -10,9 +10,7 @@ PDF sample data
 🤔 Ask questions and 🤖 get concise answers based on your own data context   
 
 <img src="https://github.com/domainio/llm-byod/blob/main/assets/app_qa.png" width="500" />
-
-> [!IMPORTANT]
-> You must have an active OpenAI API key which may involve costs.
+  
 
 ## Setup Guide
 1. Create a Python virtual env
@@ -31,6 +29,18 @@ pip install -r requirements.txt
 ```
 streamlit run main.py
 ```
+
+
+
+  
+> [!IMPORTANT]
+> You must have an active OpenAI API key which may involve costs.
+> For instance:
+> 
+> <img src="https://github.com/domainio/llm-byod/blob/main/assets/cost.png" width="200" />
+
+
+
 
 ## Next steps
 1. Enhance the prompts engineering for better accurate QA.
